@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ReactiveView</string>
+  <string name="download_js_bundle">Download JS Bundle</string>
+</resources>
