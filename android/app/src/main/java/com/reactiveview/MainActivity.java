@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 import com.reactiveview.component.ReactiveView;
 import com.reactiveview.network.FileDownloadService;
 import com.reactiveview.network.ServiceGenerator;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
 
     findViewById(R.id.download_js_bundle_btn).setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
+        showToast(getString(R.string.downloading_js_bundle_from_server));
         downloadJSBundle();
       }
     });
@@ -52,17 +54,19 @@ public class MainActivity extends Activity {
           storeJSBundleLocally(response);
         }
       }
+
       @Override
       public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable throwable) {
         Log.e(TAG, throwable.getMessage());
+        showToast(throwable.getMessage());
       }
     });
   }
 
-  // Store JS Bundle
+  // Store JS Bundle in local file directory
   private void storeJSBundleLocally(Response<ResponseBody> response) {
     Log.d(TAG, "Server connected and has file");
-    boolean writtenToDisk = false;
+    boolean writtenToDisk;
     if (response.body() != null) {
       try {
         File file = new File(getFilesDir(), "/index.android.bundle");
@@ -83,11 +87,17 @@ public class MainActivity extends Activity {
     }
   }
 
-  // Relaunch the activity.
+  // Relaunch the activity. To reload the view with new JS Bundle.
   private void reLaunch() {
+
+    reactiveView.invalidate();
     Intent intent = new Intent(this, MainActivity.class);
     intent.putExtra("REFRESH", "refresh");
     finish();
     startActivity(intent);
+  }
+
+  private void showToast(String message) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show();
   }
 }
