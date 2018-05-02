@@ -4,7 +4,7 @@
   <string name="downloading_js_bundle_from_server">Downloading JS Bundle from Server ....</string>
   <string name="js_bundle_download_completed">JSBundle Download completed</string>
   <string name="go_to_detail">Go to Detail Activity</string>
-  <string name="reactive_view_desc">ReactiveView is a React Native Android Component to load a React Native JS Bundle in the Android App.Using this component,We create an App with both Android component and React Native component.</string>
+  <string name="reactive_view_desc">ReactiveView is a React Native Android Component to load a React Native JS Bundle in the Android App.Using this component,We develop an App with both Android component and React Native component.</string>
   <string name="check_before_download_desc">Click the below button.In the detail activity, you can see two Tabs "Local" which loads the JSBundle from the asset folder.Another Tab called "Remote" which will loads the JSBundle downloaded from the Remote server. Initially this "Remote" Tab will be empty.</string>
   <string name="check_after_download_desc">Click and download the JSBundle from the remote server.After, you seen the toast message download completed. Go to the detail screen by click above button.Now, you can see the JSBundle loaded in the "Remote" Tab.</string>
 </resources>

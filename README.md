@@ -1,6 +1,6 @@
 # ReactiveView  
 
-ReactiveView is a React Native Android Component to load a React Native JS Bundle in the Android App.Using this component,We can create an App with both Android component and React Native component.
+ReactiveView is a React Native Android Component to load a React Native JS Bundle in the Android App.Using this component,We can develop an App with both Android component and React Native component.
 
 ## Installation
 
