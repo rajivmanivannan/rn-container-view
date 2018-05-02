@@ -8,14 +8,14 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.shell.MainReactPackage;
 import com.reactiveview.BuildConfig;
-import com.reactiveview.MainApplication;
+import com.reactiveview.app.MainApplication;
 
 /**
  * Created by rajiv on 04/02/18.
  */
 public class ReactiveView extends ReactRootView {
   private String componentName;
-  private String moduleName;
+  private String jSBundleFilePath;
 
   public ReactiveView(Context context) {
     super(context);
@@ -29,9 +29,9 @@ public class ReactiveView extends ReactRootView {
     super(context, attrs, defStyleAttr);
   }
 
-  public void setReactModule(String componentName, String moduleName) {
+  public void setReactModule(String componentName, String jSBundleFilePath) {
     this.componentName = componentName;
-    this.moduleName = moduleName;
+    this.jSBundleFilePath = jSBundleFilePath;
   }
 
   @Override protected void onAttachedToWindow() {
@@ -46,9 +46,8 @@ public class ReactiveView extends ReactRootView {
         .addPackage(new ReactiveViewReactPackage())
         .setUseDeveloperSupport(BuildConfig.DEBUG)
         .setInitialLifecycleState(LifecycleState.BEFORE_RESUME);
-    builder.setJSBundleFile(moduleName);
+    builder.setJSBundleFile(jSBundleFilePath);
     ReactInstanceManager reactInstanceManager = builder.build();
     this.startReactApplication(reactInstanceManager, componentName, null);
   }
-
 }
