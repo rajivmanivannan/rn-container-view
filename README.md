@@ -11,6 +11,3 @@ ReactiveView is a React Native Android Component to load a React Native JS Bundl
 3. Ensure a device, or emulated Android image is connected (`adb devices`).  
 4. Run `react-native run-android`.  
 
-### APK  
-
-To download the APK, click [here](https://github.com/rajivmanivannan/Reactive-View/blob/master/android/apk/reactive_view_debug.apk)
