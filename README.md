@@ -1,6 +1,6 @@
-# RNContainer View
+# RNContainerView
 
-RNContainer View is a React Native Android Component to load JS Bundle into an existing Android App.Using this component,We can create an App with the blend of both Android and React Native.
+RNContainerView is a React Native Android Component to load JS Bundle into an existing Android App.Using this component,We can create an App with the blend of both Android and React Native.
 
 ## Installation
 
