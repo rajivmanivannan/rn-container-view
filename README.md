@@ -1,6 +1,6 @@
-# ReactiveView  
+# RNContainer View
 
-ReactiveView is a React Native Android Component to load a React Native JS Bundle in the Android App.Using this component,We can develop an App with both Android component and React Native component.
+RNContainer View is a React Native Android Component to load JS Bundle into an existing Android App.Using this component,We can create an App with the blend of both Android and React Native.
 
 ## Installation
 
